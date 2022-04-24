@@ -1,0 +1,21 @@
+.item-count-container{
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+    box-shadow: 0 0 5px 0 #000000;
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.item-count-container div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+ 
+}
+
+.item-count-container button{
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
