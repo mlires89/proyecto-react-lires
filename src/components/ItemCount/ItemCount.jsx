@@ -9,7 +9,7 @@ function ItemCount({stock, initial , onAdd}) {
 
     function handleBtnMenos(){
        
-        if (count > 0) {
+        if (count > initial) {
         setCount (count - 1)
         }
     }
