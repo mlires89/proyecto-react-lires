@@ -8,9 +8,40 @@ function ItemDetailContainer(itemID) {
     function getItem (id){
         const myPromise = new Promise ((resolve,reject)=>{
         const productsList = [
-            {id: 1, title: 'Cohiba n° 4',precio: 2000 , imgUrl: 'https://i.ibb.co/WKCMTLh/cohiba.webp' },
-            {id:2, title: 'Montecristo', precio: 1800, imgUrl:'https://i.ibb.co/511j1mx/montecristo.jpg'},
-            {id:3, title: 'Guantanamera', precio: 1200, imgUrl:'https://i.ibb.co/mG2sKkj/guantanamera.jpg'}
+            {id: 1, 
+                title: 'Cohiba n° 4',
+                precio: 2000 , 
+                category:'unidad',
+                imgUrl: 'https://i.ibb.co/WKCMTLh/cohiba.webp' 
+              },
+              {
+                id:2, 
+                title: 'Montecristo',
+                precio: 1800,
+                category:'unidad',
+                imgUrl:'https://i.ibb.co/511j1mx/montecristo.jpg'}
+                ,
+              {
+                id:3, 
+                title: 'Guantanamera', 
+                precio: 1200, 
+                category:'unidad',
+                imgUrl:'https://i.ibb.co/mG2sKkj/guantanamera.jpg'
+              },
+              {
+                id:4, 
+                title: 'Guantanamera x 25', 
+                precio: 5200, 
+                category:'cajas',
+                imgUrl:'https://i.ibb.co/xqst9KV/guantanamera-caja.jpg'
+              },
+              {
+                id:5, 
+                title: 'Cohiba maduro x 25', 
+                precio: 10200, 
+                category:'cajas',
+                imgUrl:'https://i.ibb.co/f24q41b/cohiba-caja.jpg'
+              }
         ]; 
         const producto = productsList.filter(item => item.id === parseInt(id));
         setTimeout(()=>{

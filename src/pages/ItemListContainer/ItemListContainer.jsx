@@ -34,14 +34,14 @@ function ItemListContainer({greeting}) {
         title: 'Guantanamera x 25', 
         precio: 5200, 
         category:'cajas',
-        imgUrl:'https://i.ibb.co/mG2sKkj/gu.jpg'
+        imgUrl:'https://i.ibb.co/xqst9KV/guantanamera-caja.jpg'
       },
       {
         id:5, 
         title: 'Cohiba maduro x 25', 
         precio: 10200, 
         category:'cajas',
-        imgUrl:'https://i.ibb.co/mG2sKkj/gu.jpg'
+        imgUrl:'https://i.ibb.co/f24q41b/cohiba-caja.jpg'
       }
       ];
       const productsCategorized = category ? productsList.filter(item => item.category == categoryId) : productsList;
