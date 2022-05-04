@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 function NavBar (props) {
         return (
             <nav className='navbar'>
-                <h1>Tienda de Habanos</h1>
+               <NavLink to='/'><h1>Tienda de Habanos</h1></NavLink> 
                 <ul>
                    <li>
                         <NavLink to='/category/unidad'>Habanos por unidad</NavLink>
