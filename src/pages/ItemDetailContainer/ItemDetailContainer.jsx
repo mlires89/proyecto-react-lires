@@ -41,6 +41,27 @@ function ItemDetailContainer(itemID) {
                 precio: 10200, 
                 category:'cajas',
                 imgUrl:'https://i.ibb.co/f24q41b/cohiba-caja.jpg'
+              },
+              {
+                id:6, 
+                title: 'Humidor', 
+                precio: 24200, 
+                category:'accesorios',
+                imgUrl:'https://i.ibb.co/bPMp49c/humidor.webp'
+              },
+              {
+                id:7, 
+                title: 'Encendedor', 
+                precio: 3200, 
+                category:'accesorios',
+                imgUrl:'https://i.ibb.co/n3LBgtb/encendedor.jpg'
+              },
+              {
+                id:8, 
+                title: 'Cortador Cohiba', 
+                precio: 2200, 
+                category:'accesorios',
+                imgUrl:'https://i.ibb.co/jyMnGBM/cortador.webp'
               }
         ]; 
         const producto = productsList.filter(item => item.id === parseInt(id));
