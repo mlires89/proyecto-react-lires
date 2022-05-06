@@ -1,7 +1,6 @@
 .card{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 500px;
+    width: 400px;
     height: 600px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -9,12 +8,33 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 30px;
+    background: #f5efcc;
+    box-shadow:  10px 10px 20px #bdb89d,
+             -10px -10px 20px #fffffb;
   }
   
-
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  .button-rounded {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid #cfbb58;
+    background: #cfbb58;
   }
+  .button-rounded:hover {
+    background: #fff;
+    color: #cfbb58
+  }
+
+
   
   .link-centrado{
     text-align: center;
@@ -24,12 +44,15 @@
     width: 20%;
     margin-top: 5px;
   }
-
+.link-no-decoration{
+  text-decoration: none;
+}
   .card-container {
     padding: 0;
-    width: 500px;
+    width: 400px;
   }
 
   .img-prod{
-    max-height: 480px;
+    height: 400px;
+    width: 400px;
   }
