@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css';
+import {Link} from 'react-router-dom';
 
 function ItemDetail({item}) {
+
+  const [cantidadDeProductos , setCantidadDeProductos] = useState (null);
+
+  function addHandler(quantityToAdd){
+    setCantidadDeProductos(quantityToAdd);
+  }
+
+
   return (
     <div className='item-detail'>
       <div className='container'>
@@ -14,7 +23,9 @@ function ItemDetail({item}) {
             <h4>Precio: ${item.precio}</h4>
         </div>
         <div>
-            <ItemCount initial={1} stock={5} onAdd={()=>{console.log('agregado al carrito')}}/> 
+            {cantidadDeProductos ? <button><Link to='/cart'> Terminar compra ({cantidadDeProductos} items)</Link></button>:
+            <ItemCount initial={1} stock={5} onAdd={addHandler}/> 
+            } 
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@ function ItemCount({stock, initial , onAdd}) {
             <input readOnly value={count} />
             <button onClick={handleBtnMas}>+</button>
         </div>
-            <button onClick={()=> onAdd()}> Agregar a carrito</button>
+            <button onClick={()=> onAdd(count)}> Agregar a carrito</button>
     </div>
   )
 }
