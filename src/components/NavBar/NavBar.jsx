@@ -1,9 +1,12 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 import { NavLink } from 'react-router-dom';
+import CartContext from '../../store/CartContext';
+import Bubble from '../Bubble/Bubble';
 
 function NavBar (props) {
+    const crtCtx = useContext(CartContext)
         return (
             <nav className='navbar'>
                <NavLink to='/'><h1>Tienda de Habanos</h1></NavLink> 
@@ -18,7 +21,11 @@ function NavBar (props) {
                         <NavLink to='category/accesorios'>Accesorios</NavLink>
                     </li>
                 </ul>
-                <CartWidget/>
+                <NavLink to='/cart'>
+                    <CartWidget/>                
+                </NavLink>
+                <Bubble>{crtCtx.getCartQuantity()}</Bubble>
+               
             </nav>
         );
 }

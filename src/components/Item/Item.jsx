@@ -1,8 +1,11 @@
-import React from 'react';
+import React,{useContext}from 'react';
 import { Link } from 'react-router-dom';
+import Bubble from '../Bubble/Bubble';
+import CartContext from '../../store/CartContext';
 import './Item.css';
 
 function Item({item}) {
+  const cartctx = useContext(CartContext)
   return (
     <div className='card'>
         <img className='img-prod'src={item.imgUrl} alt="habano" />

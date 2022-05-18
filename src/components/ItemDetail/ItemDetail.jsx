@@ -8,10 +8,8 @@ function ItemDetail({item}) {
 
   const cartCtx = useContext(CartContext);
 
-  //const [cantidadDeProductos , setCantidadDeProductos] = useState (null);
 
   function addHandler(quantityToAdd){
-    //setCantidadDeProductos(quantityToAdd);
     cartCtx.addProduct({quantity: quantityToAdd, ...item});
   }
 

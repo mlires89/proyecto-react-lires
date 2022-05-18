@@ -1,0 +1,23 @@
+.bubble {
+    background-color: #cfbb58;
+    width: 20px;
+    height: 20px;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    bottom: 1%;
+    left: 1%;
+    border: 2px solid #cfbb58;
+  }
+
+  .bubble-button{
+    cursor: pointer;
+    color: #fff; 
+    transition: all 0.3s ease;   
+  }
+
+.bubble-button:hover {
+    background: #fff;
+    color: #cfbb58
+}
