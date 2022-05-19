@@ -26,11 +26,6 @@ function ItemDetail({item}) {
         </div>
         <div>       
            <ItemCount initial={0} stock={item.stock} onAdd={addHandler} />
-           <button onClick={() => console.log(cartCtx.products)} >Imprimir carrito</button>
-           <button onClick={() => cartCtx.removeProduct(item.id)} >Remove product</button>
-           <button onClick={() => cartCtx.clear()} >Clear</button>
-           <button onClick={() => console.log(cartCtx.isInCart(item.id))} >Is in cart</button>
-           <button onClick={() => console.log(cartCtx.getCartQuantity())} >Quantity</button>
            {cartCtx.products.length ?
                <button>
                    <Link to='/cart'>

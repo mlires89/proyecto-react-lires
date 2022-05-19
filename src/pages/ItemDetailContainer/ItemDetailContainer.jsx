@@ -2,17 +2,16 @@ import { useEffect } from 'react';
 import {React, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
-import { getItem } from '../../store/AsyncMock';
+import { getItem } from '../../store/firebase';
 
 function ItemDetailContainer(itemID) {
 
 const [item,setItem] = useState({});
 const { id } = useParams();
 useEffect(()=> {
-    console.log(id);
     getItem(id)
-        .then(res=>{
-            setItem(res);
+        .then(snapshot=>{
+            setItem({...snapshot.data(),id: snapshot.id});
         })
         .catch(err =>{
             alert('Ocurrio un error')
