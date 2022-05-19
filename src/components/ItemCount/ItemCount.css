@@ -1,9 +1,11 @@
 .item-count-container{
-    background-color: rgb(240, 240, 240);
     padding: 20px;
     box-shadow: 0 0 5px 0 #000000;
     margin-left: auto;
     margin-right: auto;
+    background: #f5efcc;
+    box-shadow:  10px 10px 20px #bdb89d,
+             -10px -10px 20px #fffffb;
 }
 .item-count-container div{
     display: flex;
@@ -22,3 +24,23 @@
 button{
     margin:5px;
 }
+
+.button-count-rounded {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid #cfbb58;
+    background: #cfbb58;
+  }
+  .button-count-rounded:hover {
+    background: #fff;
+    color: #cfbb58
+  }

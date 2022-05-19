@@ -27,8 +27,8 @@ function ItemDetail({item}) {
         <div>       
            <ItemCount initial={0} stock={item.stock} onAdd={addHandler} />
            {cartCtx.products.length ?
-               <button>
-                   <Link to='/cart'>
+               <button className='button-rounded'>
+                   <Link to='/cart' className='no-deco'>
                        Terminar compra ({ cartCtx.getCartQuantity() } items)
                    </Link>
                </button>:<></>

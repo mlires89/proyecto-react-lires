@@ -20,3 +20,8 @@
 .img-detail{
     width: 70%;
 }
+
+.no-deco{
+    text-decoration: none;
+    color: rgb(75, 62, 5);
+}

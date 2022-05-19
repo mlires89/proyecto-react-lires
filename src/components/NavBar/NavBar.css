@@ -23,3 +23,10 @@
 .navbar a{
     text-decoration: none;
 }
+
+.bubble-quantity{
+    height: 0;
+    position: relative;
+    bottom:29px;
+    right:12.2%;
+}
