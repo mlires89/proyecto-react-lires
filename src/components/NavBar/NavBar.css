@@ -1,9 +1,10 @@
 .navbar{
-    display: flex;
-    justify-content: space-around;    
-    background-color: burlywood;
+    display: flex; 
+    justify-content: space-around;
+    background-color: #583a13;
     align-items: center;
-    
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .navbar ul {
@@ -17,16 +18,23 @@
     padding: 10px;
 }
 .navbar a:hover {
-    color: blue;
+    color: rgb(224, 211, 95);
 }
 
 .navbar a{
     text-decoration: none;
+    color:aliceblue;
 }
 
 .bubble-quantity{
     height: 0;
     position: relative;
     bottom:29px;
-    right:12.2%;
+    right:1%;
+}
+
+.cart-container{
+    height: 0;
+    position: absolute;
+    right: 1%;
 }
