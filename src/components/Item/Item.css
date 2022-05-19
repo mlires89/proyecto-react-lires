@@ -10,9 +10,8 @@
     align-items: center;
     border-radius: 30px;
     background: #f5efcc;
-    box-shadow:  10px 10px 20px #bdb89d,
-             -10px -10px 20px #fffffb;
-  }
+    box-shadow: 3px 8px 9px #bdb89d, 4px 3px 1px #fffffb;
+}
   
   .button-rounded {
     min-width: 130px;
