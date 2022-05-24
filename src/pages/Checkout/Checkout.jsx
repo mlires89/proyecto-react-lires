@@ -1,6 +1,7 @@
 import React,{useState,useContext} from 'react';
 import CartContext from '../../store/CartContext';
 import { addDoc,collection, getFirestore} from 'firebase/firestore';
+import {Link} from 'react-router-dom';
 import './Checkout.css';
 import Spinner from '../../components/Spinner/Spinner';
 
@@ -14,36 +15,17 @@ const [buyer,setBuyer] = useState ({
     Phone:''
 });
 
-class Items {
-    constructor (id, title, price ,quantity) {
-        this.id = id;
-        this.title = title;
-        this.price = price;
-        this.quantity= quantity;
-    }
-}
-
-const itemsConverter = {
-    toFirestore: (items) => {
-        return {
-            id: items.id,
-            title: items.title,
-            price: items.price,
-            quantity:items.quantity
-            };
-    },
-    fromFirestore: (snapshot, options) => {
-        const data = snapshot.data(options);
-        return new Items(data.id, data.title, data.price,data.quantity);
-    }
-};
 
 
 const db = getFirestore();
+
 const cartCtx = useContext(CartContext);
+
 const {Name,Email,Phone} = buyer;
+
 const [load,setLoad] = useState(false);
 
+const[orderId, setOrderId] = useState();
 
 
 const handleInputChange = (e)=>{
@@ -59,13 +41,13 @@ const generateOrder = async(data) => {
     try {
         const col = collection(db,"orders")
         const order = await addDoc(col,{data})
-        console.log("order",order)
-        setLoad(false)
+        cartCtx.clear()
+        setOrderId (order.id)
     } catch (error) {
         console.log(error)
     }
+    finally {setLoad (false)}
 }
-
 
 
 
@@ -87,12 +69,14 @@ const handleSubmit = (e)=>{
 
     <div className='co-container'>
     <h1>Finalizando compra</h1>
-    <hr />
-    <h4>Introduzca sus datos</h4>
-    <br />
+    <hr/>
+     
+    {load ? <Spinner/> 
     
-    {load ? <Spinner/> :
+    :(!orderId&&
         <div>
+        <h4>Introduzca sus datos</h4>
+        <br/>
         <form className='final-form' onSubmit={handleSubmit}>
             <input 
                 type="text" 
@@ -120,8 +104,20 @@ const handleSubmit = (e)=>{
             />
             <input type="submit" value="Finalizar Compra" />
         </form>
-        </div>
+        </div>)
     }
+        <div>
+        {
+             orderId&&(
+                <div>
+                    <h4>Compra Finalizada con Exito</h4>
+                    <h4>{`Su código de compra es: ${orderId}`}</h4>
+                    <Link to="/"><h5>Realizar otra compra</h5></Link>
+                </div>
+                )
+        }
+        </div>
+
     </div>
 
 
