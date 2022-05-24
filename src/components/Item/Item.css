@@ -47,11 +47,11 @@
   text-decoration: none;
 }
   .card-container {
-    padding: 0;
     width: 400px;
   }
 
   .img-prod{
     height: 400px;
     width: 400px;
+    margin-bottom: 5px;
   }

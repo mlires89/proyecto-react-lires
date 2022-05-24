@@ -3,6 +3,7 @@
     box-shadow: 0 0 5px 0 #000000;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 5px;
     background: #f5efcc;
     box-shadow: 4px 4px 4px #bdb89d, 0px 0px 0px #fffffb;
 }
@@ -19,9 +20,7 @@
     margin-top: 5px;
 }
 
-button{
-    margin:5px;
-}
+
 
 .button-count-rounded {
     min-width: 130px;
@@ -41,4 +40,19 @@ button{
   .button-count-rounded:hover {
     background: #fff;
     color: #cfbb58
+  }
+
+  .button-handler{
+    color: #fff;
+    margin:5px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 2px solid #cfbb58;
+    background: #cfbb58;
+  }
+ 
+  .input-count{
+    border-radius: 20px;
+    border: 2px solid #cfbb58;
+    text-align: center;
   }
