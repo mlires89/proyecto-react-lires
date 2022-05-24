@@ -1,0 +1,14 @@
+.co-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.final-form{
+    display: block;
+}
+
+.final-form, input{
+width: 50%;
+margin: 5px;
+}
