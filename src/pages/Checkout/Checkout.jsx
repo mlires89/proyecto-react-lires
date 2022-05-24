@@ -1,21 +1,49 @@
 import React,{useState,useContext} from 'react';
 import CartContext from '../../store/CartContext';
-import { addDoc,collection,getFirestore} from 'firebase/firestore';
+import { addDoc,collection, getFirestore} from 'firebase/firestore';
 import './Checkout.css';
 import Spinner from '../../components/Spinner/Spinner';
 
 
 function Checkout() {
+
+
 const [buyer,setBuyer] = useState ({
     Name:'',
     Email:'',
     Phone:''
 });
 
+class Items {
+    constructor (id, title, price ,quantity) {
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.quantity= quantity;
+    }
+}
+
+const itemsConverter = {
+    toFirestore: (items) => {
+        return {
+            id: items.id,
+            title: items.title,
+            price: items.price,
+            quantity:items.quantity
+            };
+    },
+    fromFirestore: (snapshot, options) => {
+        const data = snapshot.data(options);
+        return new Items(data.id, data.title, data.price,data.quantity);
+    }
+};
+
+
 const db = getFirestore();
 const cartCtx = useContext(CartContext);
 const {Name,Email,Phone} = buyer;
 const [load,setLoad] = useState(false);
+
 
 
 const handleInputChange = (e)=>{
@@ -25,27 +53,29 @@ const handleInputChange = (e)=>{
     }))
 }
 
-const generateOrder = async (data) =>{
-    setLoad(true);
-    try{
-        const col = collection (db, 'orders')
-        console.log(col)
-        const order = await addDoc(col,data)
-        console.log('order',order)
-        console.log('order', order.id)
+const generateOrder = async(data) => {
+    setLoad(true)
+    console.log(data);
+    try {
+        const col = collection(db,"orders")
+        const order = await addDoc(col,{data})
+        console.log("order",order)
         setLoad(false)
-    } catch(error){
+    } catch (error) {
         console.log(error)
     }
 }
 
-const handleSubmit = e=>{
+
+
+
+
+const handleSubmit = (e)=>{
     e.preventDefault()
-    const items = cartCtx.products.map ( e => {return {id:e.id , title: e.title , price: e.price , quantity: e.quantity}})
+    const items = cartCtx.products.map ( e => {return {id:e.id , title: e.title , price: e.precio , quantity: e.quantity}})
     const total = cartCtx.getTotalPrice();
-    const dia = new Date();
-    const data = {buyer,items,dia,total};
-    console.log(data);
+    const date =  new Date();
+    const data = {buyer,items, date,total};
     generateOrder(data);
 }
 

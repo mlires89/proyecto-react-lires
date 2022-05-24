@@ -5,9 +5,9 @@ import ItemList from '../../components/ItemList/ItemList';
 import traerProductos from '../../store/firebase';
 import './ItemListContainer.css'
 
-function ItemListContainer({greeting}) {
+function ItemListContainer() {
 
-  const [arrayProd,setProducts] = useState([]);
+const [arrayProd,setProducts] = useState([]);
 const { categoryId } = useParams();
 
 useEffect ( () => {
