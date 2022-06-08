@@ -25,11 +25,14 @@ function NavBar (props) {
 
                 <NavLink to='/cart'>
                     <CartWidget/>   
+                    {crtCtx.products.length ?
+                     <div className='bubble-quantity'>
+                         <Bubble>{crtCtx.getCartQuantity()}</Bubble>
+                    </div>:<></>
+                    }   
                 </NavLink>
                     
-                <div className='bubble-quantity'>
-                    <Bubble>{crtCtx.getCartQuantity()}</Bubble>
-                </div>
+                
                 
             </nav>
         );

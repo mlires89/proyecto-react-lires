@@ -29,8 +29,8 @@
 .bubble-quantity{
     height: 0;
     position: relative;
-    bottom:29px;
-    right:1%;
+    bottom: 55px;
+    left: 30px;
 }
 
 .cart-container{

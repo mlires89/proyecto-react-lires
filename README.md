@@ -1,4 +1,4 @@
-# Primera entrega del Proyecto Final
+# Entrega del Proyecto Final
 
 ReactJS - Comision 31150
 Alumno Matias Lires
@@ -28,6 +28,22 @@ Luego se pasará el array de productos filtrado por parámetro al componente Ite
 Este también es un componente inteligente en el cuál se obtendrán los productos mediante un async-mock, pero también recibirá un itemId por parámetro, el mismo se obtendrá de la ruta '/item/:id'.
 
 Luego pasará el parametro al componente ItemDetail, que mostrará los detalles del producto correspondiente.
+
+### `Cart`
+
+En este componente se muestran los productos agregados al carrito de compras, es el paso previo al checkout.
+
+Si el carrito NO esta vacio nos dará la opcion de diriginrnos mediante un Link a la page checkout
+
+
+### `Checkout`
+
+En este componente se solicitan los datos al usuario para generar un registro con ellos mas los productos que se encuentran en el carrito para finalizar la compra.
+
+Se sube la orden de compra a firebase, mostrandose un componente Spinner mientras se realiza la carga.
+
+Una vez finalizado devuelve el id del registro en caso de completarse la tarea exitosamente.
+
 
 ### Comentarios
 
