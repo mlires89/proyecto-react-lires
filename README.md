@@ -7,6 +7,8 @@ Alumno Matias Lires
 
 La idea principal del proyecto es generar un e-commerce para una tienda dedicada a la venta de Habanos y productos relacionados con su consumo
 
+![App GIF](https://github.com/mlires89/proyecto-react-lires/blob/main/react-proyect.gif)
+
 ## Componentes principales
 
 ### `NavBar`
