@@ -37,7 +37,6 @@ const handleInputChange = (e)=>{
 
 const generateOrder = async(data) => {
     setLoad(true)
-    console.log(data);
     try {
         const col = collection(db,"orders")
         const order = await addDoc(col,{data})
